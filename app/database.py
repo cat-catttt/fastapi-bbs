@@ -1,3 +1,4 @@
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
@@ -15,13 +16,3 @@ SessionLocal = sessionmaker(
 )
 
 Base = declarative_base()
-
-# ============================
-# DB セッション（依存性注入用）
-# ============================
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
