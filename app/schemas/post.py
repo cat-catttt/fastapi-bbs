@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from datetime import datetime
 
 # 共通部分（content, parent_post_id）
 class PostBase(BaseModel):
@@ -10,7 +11,7 @@ class PostCreate(PostBase):
     pass
 
 
-from datetime import datetime
+
 # レスポンス用（id, created_at が追加）
 class PostResponse(PostBase):
     id: int
