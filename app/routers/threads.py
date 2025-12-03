@@ -20,9 +20,9 @@ async def list_threads(db: Session = Depends(get_db)):
     result = db.execute(stmt).scalars().all()
     return result
 
-# -----------------------------------
-# スレッド詳細 GET /threads/{thread_id}
-# -----------------------------------
+
+from fastapi import APIRouter,Depends, HTTPException
+# 省略        
 @router.get("/{thread_id}", response_model=ThreadResponse)
 async def get_thread(thread_id: int, db: Session = Depends(get_db)):
     stmt = select(Thread).where(Thread.id == thread_id)

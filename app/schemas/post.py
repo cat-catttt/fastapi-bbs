@@ -12,6 +12,7 @@ class PostCreate(PostBase):
 
 
 
+from datetime import datetime
 # レスポンス用（id, created_at が追加）
 class PostResponse(PostBase):
     id: int
